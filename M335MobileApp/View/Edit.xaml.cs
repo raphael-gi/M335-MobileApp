@@ -20,12 +20,18 @@ namespace M335MobileApp.View
         }
         protected override async void OnAppearing()
         {
-            MainDatabase db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
-            Games game = await db.Select1Game(id);
-            //Eingabefelder erhalten default value
-            G.Text = game.Game;
-            C.Text = game.Creator;
-            D.Date = game.Date;
+            try
+            {
+                Games game = await App.Database.Select1Game(id);
+                //Eingabefelder erhalten default value
+                G.Text = game.Game;
+                C.Text = game.Creator;
+                D.Date = game.Date;
+            }
+            catch
+            {
+                await DisplayAlert("Oh no!", "Couldn't find your game!", "Ok");
+            }
         }
         private async void EditGame(object sender, EventArgs e)
         {
@@ -35,16 +41,21 @@ namespace M335MobileApp.View
             }
             else
             {
-                MainDatabase db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
-                Games game = await db.Select1Game(id);
-                //Neues Game Objekt wird erstellt
-                game.Game = G.Text;
-                game.Creator = C.Text;
-                game.Date = D.Date;
+                try
+                {
+                    Games game = await App.Database.Select1Game(id);
+                    //Neues Game Objekt wird erstellt
+                    game.Game = G.Text;
+                    game.Creator = C.Text;
+                    game.Date = D.Date;
+                    await App.Database.EditGame(game);
 
-                await db.EditGame(game);
-
-                await Navigation.PushAsync(new List());
+                    await Navigation.PushAsync(new List());
+                }
+                catch
+                {
+                    await DisplayAlert("Oh no!", "Couldn't edit your game!", "Ok");
+                }
             }
         }
     }

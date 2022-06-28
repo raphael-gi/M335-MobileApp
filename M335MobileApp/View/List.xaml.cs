@@ -16,8 +16,14 @@ namespace M335MobileApp.View
         }
         protected override async void OnAppearing()
         {
-            MainDatabase db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
-            collectionView.ItemsSource = await db.SelectGame();
+            try
+            {
+                collectionView.ItemsSource = await App.Database.SelectGame();
+            }
+            catch
+            {
+                await DisplayAlert("Oh no!", "Couldn't find your games!", "Ok");
+            }
         }
         private async void ButtSee(object sender, EventArgs e)
         {

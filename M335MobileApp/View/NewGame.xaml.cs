@@ -27,9 +27,15 @@ namespace M335MobileApp.View
             }
             else
             {
-                MainDatabase db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
-                await db.NewGame(games);
-                await Navigation.PushAsync(new MainPage(1));
+                try
+                {
+                    await App.Database.NewGame(games);
+                    await Navigation.PushAsync(new MainPage(1));
+                }
+                catch
+                {
+                    await DisplayAlert("Oh no!", "Couldn't create your game!", "Ok");
+                }
             }
         }
     }

@@ -20,11 +20,17 @@ namespace M335MobileApp.View
         }
         protected override async void OnAppearing()
         {
-            MainDatabase db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
-            Games game = await db.Select1Game(id);
-            G.Text = game.Game;
-            C.Text = game.Creator;
-            D.Text = game.Date.ToString("dddd, dd MMMM yyyy");
+            try
+            {
+                Games game = await App.Database.Select1Game(id);
+                G.Text = game.Game;
+                C.Text = game.Creator;
+                D.Text = game.Date.ToString("dddd, dd MMMM yyyy");
+            }
+            catch
+            {
+                await DisplayAlert("Oh no!", "Couldn't find your game!", "Ok");
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ namespace M335MobileApp.Data
 {
     public class MainDatabase
     {
-        SQLiteAsyncConnection database;
+        private readonly SQLiteAsyncConnection database;
 
         public MainDatabase(string path)
         {

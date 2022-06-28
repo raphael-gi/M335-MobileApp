@@ -16,7 +16,7 @@
     </intent>
   </queries>
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="M335MobileApp.Android" android:theme="@style/MainTheme">
-    <activity android:name="crc64f833166735f378dc.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@mipmap/icon" android:label="M335MobileApp" android:theme="@style/MainTheme">
+    <activity android:name="crc64f833166735f378dc.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@mipmap/icon" android:label="Game Library" android:theme="@style/MainTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

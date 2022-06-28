@@ -13,7 +13,6 @@ namespace M335MobileApp.View
     {
         private int id;
         private Games game;
-        private MainDatabase db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
         public Sure(int id)
         {
             InitializeComponent();
@@ -22,13 +21,27 @@ namespace M335MobileApp.View
         }
         protected override async void OnAppearing()
         {
-            game = await db.Select1Game(id);
-            Gname.Text = game.Game;
+            try
+            {
+                game = await App.Database.Select1Game(id);
+                Gname.Text = game.Game;
+            }
+            catch
+            {
+                await DisplayAlert("Oh no!", "Couldn't find your game!", "Ok");
+            }
         }
         async void ButtDel(object sender, EventArgs e)
         {
-            await db.DeleteGame(game);
-            await Navigation.PushAsync(new MainPage(2));
+            try
+            {
+                await App.Database.DeleteGame(game);
+                await Navigation.PushAsync(new MainPage(2));
+            }
+            catch
+            {
+                await DisplayAlert("Oh no!", "Couldn't delete your game!", "Ok");
+            }
         }
         async void ButtBack(object sender, EventArgs e)
         {

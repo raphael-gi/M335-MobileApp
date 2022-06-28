@@ -1,6 +1,5 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using M335MobileApp.Data;
 using System.IO;
 
@@ -8,6 +7,19 @@ namespace M335MobileApp
 {
     public partial class App : Application
     {
+        private static MainDatabase db;
+        
+        public static MainDatabase Database
+        {
+            get
+            {
+                if (db == null)
+                {
+                    db = new MainDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Games.db3"));
+                }
+                return db;
+            }
+        }
         public App()
         {
             InitializeComponent();
