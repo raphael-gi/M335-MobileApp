@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M335MobileApp.View.Game"
+             Title="Game">
+    
+    <StackLayout Margin="20">
+        <Frame Style="{StaticResource F}">
+            <Grid>
+                <Label Grid.Row="0" VerticalOptions="Center" Text="Title:"/>
+                <Label Grid.Row="1" VerticalOptions="Center" Text="Author:"/>
+                <Label Grid.Row="2" VerticalOptions="Center" Text="Date:"/>
+
+                <Label Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" x:Name="G" FontSize="Large"/>
+                <Label Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" x:Name="C"/>
+                <Label Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2" VerticalOptions="Center" x:Name="D"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

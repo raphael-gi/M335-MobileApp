@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M335MobileApp.App">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="#021227"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="#021227"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#0C284B"/>
+            </Style>
+            <Style TargetType="Label" x:Key="LabList">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Grid.ColumnSpan" Value="2"/>
+                <Setter Property="Grid.Column" Value="0"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style TargetType="Button" x:Key="ButtList">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Grid.Column" Value="2"/>
+                <Setter Property="ClassId" Value="{Binding ID}"/>
+            </Style>
+            <Style TargetType="Button" x:Key="ButtNav">
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="BorderColor" Value="#5B7494"/>
+                <Setter Property="CornerRadius" Value="3"/>
+            </Style>
+            <Style TargetType="Frame" x:Key="F">
+                <Setter Property="BorderColor" Value="#5B7494"/>
+                <Setter Property="OutlineColor" Value="#5B7494"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+            <Style TargetType="Label" x:Key="errorm">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

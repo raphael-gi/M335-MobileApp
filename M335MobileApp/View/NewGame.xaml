@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M335MobileApp.View.NewGame"
+             Title="New Game">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="35, 25">
+            <Frame Style="{StaticResource F}">
+                <StackLayout>
+                    <Label Text="Name of Game:"/>
+                    <Entry x:Name="Game" Placeholder="Name of Game"/>
+                    <Label Text="Name of Creator:"/>
+                    <Entry x:Name="Creator" Placeholder="Name of Creator" />
+                    <Label Text="Release Date:"/>
+                    <DatePicker Format="dd/MM/yyyy"  x:Name="DateSel"/>
+                    <Button Clicked="SaveGame" Text="Add New Game" Margin="0, 20, 0, 0"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

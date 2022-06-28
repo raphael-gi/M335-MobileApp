@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M335MobileApp.View.List"
+             Title="Game List">
+    
+    <StackLayout>
+        <StackLayout Margin="20, 20, 20, 0">
+            <Grid>
+                <Button Style="{StaticResource ButtNav}" Clicked="ToHome" Grid.Column="0" Text="🏠"/>
+                <Button Style="{StaticResource ButtNav}" Clicked="ToNewG" Grid.Column="1" Text="➕"/>
+            </Grid>
+        </StackLayout>
+        <CollectionView x:Name="collectionView" Margin="20">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame Style="{StaticResource F}">
+                            <Grid>
+                                <Label Style="{StaticResource LabList}" Grid.Row="0" Text="{Binding Game}" FontSize="Large"/>
+                                <Label Style="{StaticResource LabList}" Grid.Row="1" Text="{Binding Creator}"/>
+                                <Label Style="{StaticResource LabList}" Grid.Row="2" Text="{Binding Date, StringFormat='{0:dd. MMMM yyyy}'}"/>
+
+                                <Button Style="{StaticResource ButtList}" Grid.Row="0" Clicked="ButtSee" Text="👀"/>
+                                <Button Style="{StaticResource ButtList}" Grid.Row="1" Clicked="ButtEdit" Text="🖊️"/>
+                                <Button Style="{StaticResource ButtList}" Grid.Row="2" Clicked="ButtDel" Text="🗑️​"/>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

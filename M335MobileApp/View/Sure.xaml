@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M335MobileApp.View.Sure"
+             Title="Are you sure about that?">
+    
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label HorizontalTextAlignment="Center" TextColor="PaleVioletRed" Text="Are you sure you want to delete the game:" FontSize="30"/>
+        <Label HorizontalTextAlignment="Center" TextColor="IndianRed" x:Name="Gname" FontSize="40"/>
+        <StackLayout Margin="30, 15">
+            <Grid>
+                <Button Clicked="ButtDel" BackgroundColor="IndianRed" Grid.Column="0" Text="Delete"/>
+                <Button Clicked="ButtBack" BackgroundColor="Aqua" Grid.Column="1" Text="Back"/>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

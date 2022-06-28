@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JF3B/XL6tgoanaG+u3GcS38dysyVFXvyRf/yZitZ3W0wdZo6zehgOBMaQEpHe+Rt2KFtN9+UHA1wN4iqL0lqGw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rapha\\source\\repos\\M335MobileApp\\M335MobileApp.iOS\\M335MobileApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rapha\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\rapha\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\rapha\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

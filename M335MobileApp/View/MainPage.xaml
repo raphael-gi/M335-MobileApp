@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M335MobileApp.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame>
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Game Library" FontSize="40"/>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Margin="25, 15">
+            <StackLayout Margin="0, 0, 0, 10">
+                <Label Text="Welcome to the Main Page" FontSize="20"/>
+                <Label Text="Click the two links below to get Access to the Game List or to create a new game" FontSize="16"/>
+            </StackLayout>
+            <Frame Style="{StaticResource F}">
+                <StackLayout Margin="15, 10">
+                    <Button Clicked="ListGame" Text="Game List" Margin="0, 10"/>
+                    <Button Clicked="SaveGame" Text="Add New Game"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
